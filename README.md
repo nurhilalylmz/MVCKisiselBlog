@@ -1,0 +1,2 @@
+# MVCKisiselBlog
+Bitirme Projesi
