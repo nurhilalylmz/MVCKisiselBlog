@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@using Blog.Entity.Entities
+@model Makale
+<body>
+
+    @if (ViewBag.IsSuccess != null || ViewBag.IsSuccess == true)
+    {
+        <div class="alert alert-success">@ViewBag.Message</div>
+    }
+    else if (ViewBag.IsSuccess != null || ViewBag.IsSuccess == false)
+    {
+        <div class="alert alert-danger">@ViewBag.Message</div>
+    }
+
+    <div class="col-md-9">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">Yeni Makale</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+    @using (Html.BeginForm("Edit", "Makale", FormMethod.Post))
+    {
+
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(x => x.KategoriId)
+        @Html.HiddenFor(x => x.MakaleId)
+        @Html.HiddenFor(x => x.KullaniciId)
+        @Html.HiddenFor(x => x.ResimId)
+
+
+
+        <div class="form-group">
+
+            <div class="col-sm-11">
+                @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control", @id = "input", @placeholder = "Başlık" })
+                <span class="text-danger">@Html.ValidationMessageFor(x => x.Baslik)</span>
+            </div>
+        </div>
+                    <div class="panel-body">
+                        <div style="height: 100px">
+                            @Html.TextAreaFor(x => x.Icerik, new { @class = "form-control", @id = "editor", @placeholder = "İçerik yazın" })
+                            <span class="text-danger">@Html.ValidationMessageFor(x => x.Icerik)</span>
+                        </div>
+                    </div>
+                    @*<div class="form-group">
+                        <div class="col-md-7">
+                            <div class="form-group">
+                                <label class="col-md-12">Üst Kategori</label>
+                                <div class="col-md-12">
+                                    @Html.DropDownListFor(x => x.Product.Category.ParentCategoryId, ViewBag.Categories as SelectList, "Kategori Seçiniz.", new { @class = "form-control", onchange = "GetCategories()", id = "ParentCat" })
+                                </div>*@
+                          
+                            <div class="form-group">
+                                <div class="col-md-6">
+                                    <label for="exampleInputFile">Resim Ekle</label>
+                                    <input type="file" id="exampleInputFile">
+
+                                </div>
+                                <div class="form-group">
+                                    <label>Tarih</label><br />
+                                    @Html.TextBoxFor(x => x.EklenmeTarihi, new { @type = "datetime", @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.EklenmeTarihi)
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="box-footer">
+                                    <div class="pull-right">
+
+                                        <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Düzenle</button>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            }
+
+                        </div>
+                    </div>
+                </div>
+
+
+</body>
+
+
+

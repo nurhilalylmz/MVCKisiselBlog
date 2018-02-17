@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<body>
+
+    @if (ViewBag.IsSuccess != null || ViewBag.IsSuccess == true)
+    {
+        <div class="alert alert-success">@ViewBag.Message</div>
+    }
+    else if (ViewBag.IsSuccess != null || ViewBag.IsSuccess == false)
+    {
+        <div class="alert alert-dismissable">@ViewBag.Message</div>
+    }
+
+    @using (Html.BeginForm("Delete", "Makale", FormMethod.Post))
+    {
+
+        @Html.AntiForgeryToken()
+
+    }
+</body>

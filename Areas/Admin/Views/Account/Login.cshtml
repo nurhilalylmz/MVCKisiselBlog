@@ -1,0 +1,64 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+@using System.Web.Optimization
+@model Blog.UI.Areas.Admin.Models.LoginModel
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,400italic%7cMontserrat:400,700" rel="stylesheet" type="text/css">
+    @Styles.Render("~/bundles/styles")
+</head>
+<body class="hold-transition login-page">
+    <div class="login-box">
+
+        <div class="login-box-body">
+            <p class="login-box-msg">Giriş Yap</p>
+
+            <div class="card-body">
+
+             
+                @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+                {
+                            <div class="text-danger">@ViewBag.FormResult</div>
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-group">
+                                <label>E-Posta Adresi</label>
+                                @Html.TextBoxFor(x => x.Email, new { @type = "Email", @class = "form-control", @placeholder = "E-Posta Giriniz" })
+                                @Html.ValidationMessageFor(x => x.Email)
+                                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+
+                            </div>
+                            <div class="form-group">
+                                <label>Parola</label>
+                                @Html.TextBoxFor(x => x.Password, new { @type = "password", @class = "form-control", @placeholder = "Parolanızı giriniz" })
+
+                                @Html.ValidationMessageFor(x => x.Password)
+                                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        @Html.CheckBoxFor(x => x.RememberMe, new { @class = "form-check-input" }) Beni Unutma!
+                                    </label>
+                                </div>
+                            </div>
+
+                            <input type="submit" class="btn btn-primary btn-block btn-flat" name="name" value="Oturum Aç" />
+
+                        
+                }
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/scripts")
+</body>
+</html>

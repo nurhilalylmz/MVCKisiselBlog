@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@using Blog.Entity.Entities;
+@model IEnumerable<Makale>
+<body>
+    <div class="box-body no-padding">
+        <div class="table-responsive mailbox-messages">
+            <div class="col-md-3">
+                <a href="/Admin/Makale/Add" class="btn btn-primary btn-block margin-bottom">Yeni</a>
+            </div>
+            <h1>Makaleler</h1>
+            <table class="table table-hover table-striped">
+                <tbody>
+                <thead>
+                    <tr>
+                        <th>İşlem</th>
+                        <th>Başlık</th>
+                        <th>Tarih</th>
+                        <th>İçerik</th>
+                        <th>Yazar</th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td><span class="label label-success">Tamamlandı</span></td>
+                        <td class="mailbox-name">@item.Baslik</td>
+                        <td class="mailbox-date">@item.EklenmeTarihi</td>
+                        @if (item.Icerik.Length <= 290)
+                        {
+                            <td class="mailbox-attachment">@Html.Raw(item.Icerik)</td>
+                        }
+                        else
+                        {
+                            <td class="mailbox-attachment">@Html.Raw(item.Icerik.Substring(0, 290))</td>
+                        }
+                        <td><a href="/Admin/Home">Admin</a></td>
+                        <td>
+                            <a class="btn btn-info btn-sm" type="submit " href="/Admin/Makale/Edit/@item.MakaleId">Düzenle</a>
+                            <a class="btn btn-danger btn-sm" type="submit" href="/Admin/Makale/Delete/@item.MakaleId">Sil</a>
+                        </td>
+                    </tr>
+                }
+                    
+            </table>
+        </div>
+        </div>
+     
+
+</body>
+
+
