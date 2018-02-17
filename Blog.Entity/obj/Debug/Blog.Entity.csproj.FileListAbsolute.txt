@@ -1,0 +1,12 @@
+C:\Users\YILMAZ\Documents\deneme\BlogProje\Blog.Entity\bin\Debug\Blog.Entity.dll.config
+C:\Users\YILMAZ\Documents\deneme\BlogProje\Blog.Entity\bin\Debug\Blog.Entity.dll
+C:\Users\YILMAZ\Documents\deneme\BlogProje\Blog.Entity\bin\Debug\Blog.Entity.pdb
+C:\Users\YILMAZ\Documents\deneme\BlogProje\Blog.Entity\bin\Debug\EntityFramework.dll
+C:\Users\YILMAZ\Documents\deneme\BlogProje\Blog.Entity\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\YILMAZ\Documents\deneme\BlogProje\Blog.Entity\bin\Debug\FluentValidation.dll
+C:\Users\YILMAZ\Documents\deneme\BlogProje\Blog.Entity\bin\Debug\EntityFramework.xml
+C:\Users\YILMAZ\Documents\deneme\BlogProje\Blog.Entity\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\YILMAZ\Documents\deneme\BlogProje\Blog.Entity\bin\Debug\FluentValidation.xml
+C:\Users\YILMAZ\Documents\deneme\BlogProje\Blog.Entity\obj\Debug\Blog.Entity.dll
+C:\Users\YILMAZ\Documents\deneme\BlogProje\Blog.Entity\obj\Debug\Blog.Entity.pdb
+C:\Users\YILMAZ\Documents\deneme\BlogProje\Blog.Entity\obj\Debug\Blog.Entity.csprojResolveAssemblyReference.cache
